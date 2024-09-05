@@ -18,13 +18,16 @@ function timer() {
 }
 
 function startClock() {
+    if(interval) resetClock()
     interval = setInterval(timer, 1000)
 }
 
 
 function stopClock() {
-
+    clearInterval(interval)
 }
 function resetClock() {
-
+    stopClock()
+    secondsElapsed = 0
+    setTime()
 }
